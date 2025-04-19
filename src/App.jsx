@@ -1,8 +1,6 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Extension from "./components/Extension"
-import moon from "./assets/images/icon-moon.svg"
-import sun from "./assets/images/icon-sun.svg"
-import logo from "./assets/images/logo.svg"
+
 
 const initialData = [
   {
@@ -82,21 +80,29 @@ function App() {
   const [isDark, setIsDark] = useState(false);
   const [theme, setTheme] = useState("light");
   const [data, setData] = useState([...initialData])
+  const switchTheme =()=> setIsDark(!isDark);
   
   return (
-    <div className="w-[1024px] flex flex-col items-center" data-theme ={theme} >
-      <header className=" flex justify-between items-center w-full p-5 bg-neutral-00 rounded-xl border-2 border-neutral-200 shadow-card-box">
-        <img src={logo} alt="logo" />
-        <img src={isDark ? sun:moon} alt="theme-switcher" />
+    <div className={`p-[2rem] w-[1440px] flex flex-col items-center ${isDark? "bg-dark":"200"}`} >
+      <header className={`flex justify-between items-center w-full p-3 bg-neutral-${isDark? "700":"00"} rounded-xl border-2 border-neutral-200 shadow-card-box mb-7`}>
+        <img src="./assets/images/logo.svg" alt="logo"  />
+        <button onClick={switchTheme}><img src={isDark ? "./assets/images/icon-sun.svg":"./assets/images/icon-moon.svg"} alt="theme-switcher" className="p-3 rounded-2xl bg-neutral-100" /></button>
       </header>
-      <div className="extension-list">
-        <div className="before-list"></div>
-        <div className="main-list">
-          {}
+      <div className="extension-list w-full">
+        <div className="before-list flex items-center justify-between my-7">
+          <h1 className="font-semibold text-4xl ">Extension List</h1>
+          <div className="filter-buttons">
+            <button className="py-2 px-5 rounded-full ml-1 ">All</button>
+            <button className="py-2 px-4 rounded-full ml-1.5 ">Active</button>
+            <button className="py-2 px-4 rounded-full ml-1.5 ">Inactive</button>
+          </div>
+        </div>
+        <div className="w-full main-list grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+          {data.map(ext => <Extension key={ext.name} data={ext} isDark={isDark} />)}
         </div>
       </div>
       
-      <Extension />
+      
       
     </div>
   )
