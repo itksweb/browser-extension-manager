@@ -81,18 +81,20 @@ function App() {
   const [theme, setTheme] = useState("light");
   const [data, setData] = useState([...initialData])
   const switchTheme =()=> setIsDark(!isDark);
+  useEffect(()=> setTheme(isDark ? "dark":"light"),[isDark])
   
   return (
-    <div className={`p-[2rem] w-[1440px] flex flex-col items-center ${isDark? "bg-dark":"200"}`} >
-      <header className={`flex justify-between items-center w-full p-3 bg-neutral-${isDark? "700":"00"} rounded-xl border-2 border-neutral-200 shadow-card-box mb-7`}>
+    <div className={`p-[2rem] w-[1440px] flex flex-col items-center bg-color`} data-theme = {theme} >
+      <header className={`flex justify-between items-center w-full p-3 header-bg rounded-xl mb-7`}>
         <img src="./assets/images/logo.svg" alt="logo"  />
         <button onClick={switchTheme}><img src={isDark ? "./assets/images/icon-sun.svg":"./assets/images/icon-moon.svg"} alt="theme-switcher" className="p-3 rounded-2xl bg-neutral-100" /></button>
       </header>
+      {/* <div className="see text-4xl">hello</div> */}
       <div className="extension-list w-full">
         <div className="before-list flex items-center justify-between my-7">
           <h1 className="font-semibold text-4xl ">Extension List</h1>
           <div className="filter-buttons">
-            <button className="py-2 px-5 rounded-full ml-1 ">All</button>
+            <button className="py-2 px-5 rounded-full ml-1 bg-transparent ">All</button>
             <button className="py-2 px-4 rounded-full ml-1.5 ">Active</button>
             <button className="py-2 px-4 rounded-full ml-1.5 ">Inactive</button>
           </div>

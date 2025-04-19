@@ -1,46 +1,18 @@
 @import "tailwindcss";
 
-@theme {
-  --shadow-card-box: 0 4px hsl(217, 61%, 90%);
-  --breakpoint-xs: 30rem;
-  --color-neutral-900: hsl(227, 75%, 14%);
-  --color-neutral-800: hsl(226, 25%, 17%);
-  --color-neutral-700: hsl(225, 23%, 24%);
-  --color-neutral-600: hsl(226, 11%, 37%);
-  --color-neutral-300: hsl(0, 0%, 78%);
-  --color-neutral-200: hsl(217, 61%, 90%);
-  --color-neutral-100: hsl(0, 0%, 93%);
-  --color-neutral-00: hsl(200, 60%, 99%);
-  --color-red-400: hsl(3, 86%, 64%);
-  --color-red-500: hsl(3, 71%, 56%);
-  --color-red-700: hsl(3, 77%, 44%);
-  --color-bg-dark: hsl(227, 75%, 14%);
-}
-
-.bg-dark{
-  background-color: hsl(227, 75%, 14%);
-}
-.bg-light{
-  background-color: hsl(217, 61%, 90%);
-}
-
-[data-theme="you"]{
-  --color-neutral-900: hsl(227, 75%, 14%);
-  --color-neutral-800: hsl(226, 25%, 17%);
-  --color-neutral-700: hsl(225, 23%, 24%);
-  --color-neutral-600: hsl(226, 11%, 37%);
-  --color-neutral-300: hsl(0, 0%, 78%);
-  --color-neutral-200: hsl(217, 61%, 90%);
-  --color-neutral-100: hsl(0, 0%, 93%);
-  --color-neutral-00: hsl(200, 60%, 99%);
-  --color-red-400: hsl(3, 86%, 64%);
-  --color-red-500: hsl(3, 71%, 56%);
-  --color-red-700: hsl(3, 77%, 44%);
-
-}
-
-
 :root {
+  --dark-1: hsl(227, 75%, 14%);
+  --dark-2: hsl(226, 25%, 17%);
+  --dark-3: hsl(225, 23%, 24%);
+  --dark-4: hsl(226, 11%, 37%);
+  --light-4: hsl(0, 0%, 78%);
+  --light-3: hsl(217, 61%, 90%);
+  --light-2: hsl(0, 0%, 93%);
+  --light-1: hsl(200, 60%, 99%);
+  --red-3: hsl(3, 86%, 64%);
+  --red-2: hsl(3, 71%, 56%);
+  --red-1: hsl(3, 77%, 44%);
+  
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -54,6 +26,111 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+
+[data-theme="light"]{
+  --bg-color: var(--light-3);
+  --see:purple;
+  --header-bg: var(--light-1);
+  --card-bg:var(--light-1);
+  --switch-bg:var(--light-4);
+  --switch-active-bg:var(--red-1);
+  --card-border-color: var(--light-4);
+  --card-btn-bg:var(--light-1);
+  --card-btn-text: inherit;
+}
+
+[data-theme="dark"]{
+  --bg-color:var(--dark-1);
+  --see:cyan;
+  --header-bg: var(--dark-3);
+  --card-bg:var(--dark-3);
+  --switch-bg:var(--dark-4);
+  --switch-active-bg:var(--red-3);
+  --ext-name: var(--light-1);
+  --ext-desc:var(--light-4);
+  --card-border-color: var(--dark-4);
+  --card-btn-bg: var(--dark-2);
+  --card-btn-text: var(--light-1);
+}
+
+/* @theme {
+  --shadow-card-box: 0 4px hsl(217, 61%, 90%);
+  --breakpoint-xs: 30rem;
+  --color-neutral-900: hsl(227, 75%, 14%);
+  --color-neutral-800: hsl(226, 25%, 17%);
+  --color-neutral-700: hsl(225, 23%, 24%);
+  --color-neutral-600: hsl(226, 11%, 37%);
+  --color-neutral-300: hsl(0, 0%, 78%);
+  --color-neutral-200: hsl(217, 61%, 90%);
+  --color-neutral-100: hsl(0, 0%, 93%);
+  --color-neutral-00: hsl(200, 60%, 99%);
+  --color-red-400: hsl(3, 86%, 64%);
+  --color-red-500: hsl(3, 71%, 56%);
+  --color-red-700: hsl(3, 77%, 44%);
+  --color-bg-color: var(--bg-color);
+} */
+
+
+
+.bg-color{
+  background-color: var(--bg-color);
+}
+.header-bg {
+  background-color: var(--header-bg);
+}
+.my-card {
+  background-color: var(--card-bg);
+  border-color: var(--card-border-color);
+  box-shadow: rgba(69, 74, 93, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  
+}
+
+.switch-bg {
+  background-color: var(--switch-bg);
+}
+
+.switch-active-bg {
+  background-color: var(--switch-active-bg);
+}
+
+.card-name{
+  color: var(--ext-name);
+}
+.card-desc {
+  color:var(--ext-desc);
+}
+.card-btn {
+  background-color: var(--card-btn-bg);
+  border: 1px solid var(--card-border-color);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--card-btn-text);
+  /* padding: 15px 32px; */
+  /* display: inline-block; */
+  /* font-size: 16px; */
+  /* margin: 4px 2px; */
+  
+}
+.card-btn:hover {
+  background-color: var(--switch-active-bg);
+  border: none;
+  color: var(--light-1);
+ 
+  
+}
+.see {
+  background-color: var(--see);
+}
+
+/* .bg-dark{
+  background-color: hsl(227, 75%, 14%);
+}
+.bg-light{
+  background-color: hsl(217, 61%, 90%);
+} */
+
 
 body {
   margin: 0;
