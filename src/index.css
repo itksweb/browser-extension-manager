@@ -16,11 +16,7 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  /* color-scheme: light dark; */
-  /* color: rgba(255, 255, 255, 0.87);
-  background-color: #242424; */
-
+  color-scheme: light dark;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -38,6 +34,7 @@
   --card-border-color: var(--light-4);
   --card-btn-bg:var(--light-1);
   --card-btn-text: inherit;
+  --header-btn-hover: hsl(220, 27%, 98%);
 }
 
 [data-theme="dark"]{
@@ -52,26 +49,8 @@
   --card-border-color: var(--dark-4);
   --card-btn-bg: var(--dark-2);
   --card-btn-text: var(--light-1);
+  --header-btn-hover: var(--dark-4);
 }
-
-/* @theme {
-  --shadow-card-box: 0 4px hsl(217, 61%, 90%);
-  --breakpoint-xs: 30rem;
-  --color-neutral-900: hsl(227, 75%, 14%);
-  --color-neutral-800: hsl(226, 25%, 17%);
-  --color-neutral-700: hsl(225, 23%, 24%);
-  --color-neutral-600: hsl(226, 11%, 37%);
-  --color-neutral-300: hsl(0, 0%, 78%);
-  --color-neutral-200: hsl(217, 61%, 90%);
-  --color-neutral-100: hsl(0, 0%, 93%);
-  --color-neutral-00: hsl(200, 60%, 99%);
-  --color-red-400: hsl(3, 86%, 64%);
-  --color-red-500: hsl(3, 71%, 56%);
-  --color-red-700: hsl(3, 77%, 44%);
-  --color-bg-color: var(--bg-color);
-} */
-
-
 
 .bg-color{
   background-color: var(--bg-color);
@@ -79,6 +58,22 @@
 .header-bg {
   background-color: var(--header-bg);
 }
+
+.btn {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border-color);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--card-btn-text);
+}
+.btn:hover {
+  background-color: var(--header-btn-hover);
+  border: none;
+  color: var(--dark-4);
+  
+}
+
 .my-card {
   background-color: var(--card-bg);
   border-color: var(--card-border-color);
@@ -107,29 +102,12 @@
   text-decoration: none;
   cursor: pointer;
   color: var(--card-btn-text);
-  /* padding: 15px 32px; */
-  /* display: inline-block; */
-  /* font-size: 16px; */
-  /* margin: 4px 2px; */
-  
 }
 .card-btn:hover {
   background-color: var(--switch-active-bg);
   border: none;
   color: var(--light-1);
- 
-  
 }
-.see {
-  background-color: var(--see);
-}
-
-/* .bg-dark{
-  background-color: hsl(227, 75%, 14%);
-}
-.bg-light{
-  background-color: hsl(217, 61%, 90%);
-} */
 
 
 body {
@@ -177,7 +155,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 } */
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -188,7 +166,7 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
 
 
 .attribution { font-size: 11px; text-align: center; }

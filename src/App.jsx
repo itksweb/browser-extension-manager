@@ -94,9 +94,9 @@ function App() {
         <div className="before-list flex items-center justify-between my-7">
           <h1 className="font-semibold text-4xl ">Extension List</h1>
           <div className="filter-buttons">
-            <button className="py-2 px-5 rounded-full ml-1 bg-transparent ">All</button>
-            <button className="py-2 px-4 rounded-full ml-1.5 ">Active</button>
-            <button className="py-2 px-4 rounded-full ml-1.5 ">Inactive</button>
+            <button className="py-2 px-5 rounded-full ml-1 btn ">All</button>
+            <button className="py-2 px-4 rounded-full ml-1.5 btn">Active</button>
+            <button className="py-2 px-4 rounded-full ml-1.5 btn">Inactive</button>
           </div>
         </div>
         <div className="w-full main-list grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
