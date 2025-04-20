@@ -17,7 +17,7 @@ const Extension = ({data, isDark}) => {
             </div>
         </div>
         <div className="flex justify-between items-center mt-5">
-            <button className="px-5 py-2 rounded-full card-btn ">Remove</button>
+            <button className="px-5 py-2 rounded-full btn card-btn ">Remove</button>
             <div className={` w-10 cursor-pointer rounded-full h-5 flex items-center p-[2px] ${isActive ? "switch-active-bg justify-end":"switch-bg justify-start"} `}>
                 <div className="switch-inner bg-white size-4 rounded-full"></div>
             </div>

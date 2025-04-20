@@ -89,11 +89,11 @@ function App() {
         <img src="./assets/images/logo.svg" alt="logo"  />
         <button onClick={switchTheme}><img src={isDark ? "./assets/images/icon-sun.svg":"./assets/images/icon-moon.svg"} alt="theme-switcher" className="p-3 rounded-2xl bg-neutral-100" /></button>
       </header>
-      {/* <div className="see text-4xl">hello</div> */}
+      
       <div className="extension-list w-full">
-        <div className="before-list flex items-center justify-between my-7">
-          <h1 className="font-semibold text-4xl ">Extension List</h1>
-          <div className="filter-buttons">
+        <div className="before-list flex flex-col sm:flex-row items-center justify-between my-7">
+          <h1 className="font-semibold text-4xl max-[639px]:mb-7">Extension List</h1>
+          <div className="filter-buttons flex place-items-end ">
             <button className="py-2 px-5 rounded-full ml-1 btn ">All</button>
             <button className="py-2 px-4 rounded-full ml-1.5 btn">Active</button>
             <button className="py-2 px-4 rounded-full ml-1.5 btn">Inactive</button>
