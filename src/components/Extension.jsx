@@ -8,7 +8,7 @@ const Extension = ({data, isDark}) => {
     useEffect(()=> setActiveRed(isDark ? "bg-red-400":"bg-red-700"),[isDark])
 
   return (
-    <div className={`min-w-96 my-card min-h-44 p-5 rounded-xl border-[1px] flex flex-col justify-between`}>
+    <div className={` my-card min-h-44 p-5 rounded-xl border-[1px] flex flex-col justify-between`}>
         <div className="flex place-items-start ">
             <img src={logo} alt={`haha-logo`} />
             <div className="words ml-4">
