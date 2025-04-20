@@ -32,7 +32,7 @@
   --switch-active-bg:var(--red-1);
   --card-border-color: var(--light-4);
   --card-btn-bg:var(--light-1);
-  --card-btn-text: inherit;
+  --card-btn-text: hsl(226, 25%, 17%);
   --header-btn-hover: hsl(220, 27%, 98%);
   --theme-switch-bg: var(--light-2);
 }

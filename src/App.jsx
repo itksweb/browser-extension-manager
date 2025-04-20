@@ -84,7 +84,7 @@ function App() {
   useEffect(()=> setTheme(isDark ? "dark":"light"),[isDark])
   
   return (
-    <div className={`p-[2rem] w-[1440px] flex flex-col items-center big-color text-color `} data-theme = {theme} >
+    <div className={`p-[2rem] w-[1440px] flex flex-col items-center bg-color text-color `} data-theme = {theme} >
       <header className={`flex justify-between items-center w-full p-3 header-bg rounded-xl mb-7`}>
         <img src="./assets/images/logo.svg" alt="logo"  />
         <button onClick={switchTheme}><img src={isDark ? "./assets/images/icon-sun.svg":"./assets/images/icon-moon.svg"} alt="theme-switcher" className="p-3 rounded-2xl theme-switch-bg" /></button>
