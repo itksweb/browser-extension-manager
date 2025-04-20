@@ -87,19 +87,19 @@ function App() {
     <div className={`p-[2rem] w-[1440px] flex flex-col items-center bg-color`} data-theme = {theme} >
       <header className={`flex justify-between items-center w-full p-3 header-bg rounded-xl mb-7`}>
         <img src="./assets/images/logo.svg" alt="logo"  />
-        <button onClick={switchTheme}><img src={isDark ? "./assets/images/icon-sun.svg":"./assets/images/icon-moon.svg"} alt="theme-switcher" className="p-3 rounded-2xl bg-neutral-100" /></button>
+        <button onClick={switchTheme}><img src={isDark ? "./assets/images/icon-sun.svg":"./assets/images/icon-moon.svg"} alt="theme-switcher" className="p-3 rounded-2xl theme-switch-bg" /></button>
       </header>
       
       <div className="extension-list w-full">
         <div className="before-list flex flex-col sm:flex-row items-center justify-between my-7">
-          <h1 className="font-semibold text-4xl max-[639px]:mb-7">Extension List</h1>
+          <h1 className="font-semibold text-4xl max-[639px]:mb-7 text-color">Extension List</h1>
           <div className="filter-buttons flex place-items-end ">
             <button className="py-2 px-5 rounded-full ml-1 btn ">All</button>
             <button className="py-2 px-4 rounded-full ml-1.5 btn">Active</button>
             <button className="py-2 px-4 rounded-full ml-1.5 btn">Inactive</button>
           </div>
         </div>
-        <div className="w-full main-list grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+        <div className="w-full main-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {data.map(ext => <Extension key={ext.name} data={ext} isDark={isDark} />)}
         </div>
       </div>

@@ -26,7 +26,6 @@
 
 [data-theme="light"]{
   --bg-color: var(--light-3);
-  --see:purple;
   --header-bg: var(--light-1);
   --card-bg:var(--light-1);
   --switch-bg:var(--light-4);
@@ -35,11 +34,11 @@
   --card-btn-bg:var(--light-1);
   --card-btn-text: inherit;
   --header-btn-hover: hsl(220, 27%, 98%);
+  --theme-switch-bg: var(--light-2);
 }
 
 [data-theme="dark"]{
   --bg-color:var(--dark-1);
-  --see:cyan;
   --header-bg: var(--dark-3);
   --card-bg:var(--dark-3);
   --switch-bg:var(--dark-4);
@@ -50,6 +49,7 @@
   --card-btn-bg: var(--dark-2);
   --card-btn-text: var(--light-1);
   --header-btn-hover: var(--dark-4);
+  --theme-switch-bg: var(--dark-2);
 }
 
 .bg-color{
@@ -57,6 +57,10 @@
 }
 .header-bg {
   background-color: var(--header-bg);
+}
+
+.theme-switch-bg {
+  background-color: var(--theme-switch-bg);
 }
 
 .btn {
@@ -71,7 +75,10 @@
   background-color: var(--header-btn-hover);
   border: none;
   color: var(--dark-4);
-  
+}
+
+.text-color {
+  color: var(--card-btn-text);
 }
 
 .my-card {
