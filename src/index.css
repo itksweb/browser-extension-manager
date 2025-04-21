@@ -35,6 +35,7 @@
   --card-btn-text: hsl(226, 25%, 17%);
   --header-btn-hover: hsl(220, 27%, 98%);
   --theme-switch-bg: var(--light-2);
+  --btn-text:var(--light-1);
 }
 
 [data-theme="dark"]{
@@ -50,6 +51,7 @@
   --card-btn-text: var(--light-1);
   --header-btn-hover: var(--dark-4);
   --theme-switch-bg: var(--dark-2);
+  --btn-text: hsl(226, 25%, 17%);
 }
 
 .bg-color{
@@ -64,17 +66,26 @@
 }
 
 .btn {
-  background-color: var(--card-bg);
   border: 1px solid var(--card-border-color);
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+}
+
+.btn-normal {
+  background-color: var(--card-bg);
   color: var(--card-btn-text);
 }
-.btn:hover {
+
+.btn-normal:hover {
   background-color: var(--header-btn-hover);
   border: none;
   color: var(--dark-4);
+}
+
+.btn-active {
+  background-color: var(--switch-active-bg);
+  color: var(--btn-text);
 }
 
 .text-color {
@@ -96,6 +107,7 @@
   background-color: var(--switch-active-bg);
 }
 
+
 .card-name{
   color: var(--ext-name);
 }
@@ -104,10 +116,6 @@
 }
 .card-btn {
   background-color: var(--card-btn-bg);
-  border: 1px solid var(--card-border-color);
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
   color: var(--card-btn-text);
 }
 .card-btn:hover {
@@ -121,6 +129,7 @@ body {
   margin: 0;
   display: flex;
   justify-content: center;
+  background-color: var(--bg-color);
   min-width: 320px;
   min-height: 100vh;
   
