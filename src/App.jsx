@@ -11,9 +11,28 @@ function App() {
   const [filteredDta, setFilteredData] = useState([...data])
   const [visibleData, setVisibleData]= useState("All")
 
-  const switchTheme =()=> setIsDark(!isDark);
-  useEffect(()=> setTheme(isDark ? "dark":"light"),[isDark]);
+  const retrieveUserPref = () => {
+      if (localStorage.getItem("theme")) {
+        return localStorage.getItem("theme");
+      }
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        return "dark";
+      }
+    }
+  useEffect(()=>{
+    const info = retrieveUserPref();
+    if (info && info !== theme) {
+      setTheme(info);
+      setIsDark(!isDark)
+    }
+  },[])
 
+  const switchTheme =(myTheme)=> {
+    localStorage.setItem("theme", myTheme);
+    setTheme(myTheme);
+    setIsDark(!isDark);
+  };
+  
   const selectData=(choice)=>{
     if (choice !== visibleData) setVisibleData(choice);
   }
@@ -51,7 +70,7 @@ function App() {
     <div className={`p-[2rem] w-full flex flex-col items-center bg-color text-color `} data-theme = {theme} >
       <header className={`flex justify-between items-center w-full p-3 header-bg rounded-xl mb-7`}>
         <img src="./assets/images/logo.svg" alt="logo"  />
-        <button onClick={switchTheme}><img src={isDark ? "./assets/images/icon-sun.svg":"./assets/images/icon-moon.svg"} alt="theme-switcher" className="p-3 rounded-2xl theme-switch-bg" /></button>
+        <button onClick={()=> switchTheme(isDark ? "light":"dark")}><img src={isDark ? "./assets/images/icon-sun.svg":"./assets/images/icon-moon.svg"} alt="theme-switcher" className="p-3 rounded-2xl theme-switch-bg" /></button>
       </header>
       
       <div className="extension-list w-full">
