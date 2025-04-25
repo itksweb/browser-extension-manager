@@ -1,6 +1,6 @@
 # Browser Extension Manager
 
-[Expense Chart](https://[Browser Extension Manager](https://bem-itk.vercel.app/)) is a frontend react project developed with mobile devices in mind. It showcases the interface of an expenses chart which is but a fragment of a mor complex fintech app. Hover on in each of the chart bars to see the corresponding amount surface
+[Expense Chart](https://[Browser Extension Manager](https://bem-itk.vercel.app/)) is a frontend react project developed with mobile devices in mind. It showcases the interface of an browser extension manager which is but a fragment of a more complex app. 
 
 ## Table of contents
 
